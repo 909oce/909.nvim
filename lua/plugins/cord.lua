@@ -50,7 +50,7 @@ return {
         buttons = {
           {
             label = 'View Repository',                -- Text displayed on the button
-            url = 'https://github.com/909oce',                              -- URL where the button leads to ('git' = automatically fetch Git repository URL)
+            url = 'git',                              -- URL where the button leads to ('git' = automatically fetch Git repository URL)
           },
           -- {
           --   label = 'View Plugin',
