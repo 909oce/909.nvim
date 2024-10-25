@@ -35,5 +35,5 @@ hl(0, 'MiniDiffOverDelete', { fg = get('MiniDiffOverDelete', true).foreground, b
 hl(0, 'MiniDiffSignAdd', { fg = get('MiniDiffSignAdd', true).foreground, bg = 'NONE' })
 hl(0, 'MiniDiffSignChange', { fg = get('MiniDiffSignChange', true).foreground, bg = 'NONE' })
 hl(0, 'MiniDiffSignDelete', { fg = get('MiniDiffSignDelete', true).foreground, bg = 'NONE' })
-hl(0, 'WinSeparator', { fg = '#101010', bg = 'NONE' })
+hl(0, 'WinSeparator', { fg = '#635945', bg = 'NONE' })
 hl(0, 'MiniStatuslineDevinfo', { fg = get('MiniStatuslineDevinfo', true).foreground, bg = '#161616' })
