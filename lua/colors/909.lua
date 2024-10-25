@@ -37,3 +37,6 @@ hl(0, 'MiniDiffSignChange', { fg = get('MiniDiffSignChange', true).foreground, b
 hl(0, 'MiniDiffSignDelete', { fg = get('MiniDiffSignDelete', true).foreground, bg = 'NONE' })
 hl(0, 'WinSeparator', { fg = '#635945', bg = 'NONE' })
 hl(0, 'MiniStatuslineDevinfo', { fg = get('MiniStatuslineDevinfo', true).foreground, bg = '#161616' })
+hl(0, 'TelescopeBorder', { fg = '#aa9e7a' })
+hl(0, 'TelescopePromptPrefix', { fg = '#d4be98' })
+hl(0, 'TelescopeMatching', { fg = '#b8bb26' })
