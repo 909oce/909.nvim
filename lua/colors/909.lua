@@ -40,3 +40,4 @@ hl(0, 'MiniStatuslineDevinfo', { fg = get('MiniStatuslineDevinfo', true).foregro
 hl(0, 'TelescopeBorder', { fg = '#aa9e7a' })
 hl(0, 'TelescopePromptPrefix', { fg = '#d4be98' })
 hl(0, 'TelescopeMatching', { fg = '#b8bb26' })
+hl(0, 'IblIndent', { fg = '#161616' })
