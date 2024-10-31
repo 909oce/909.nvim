@@ -9,6 +9,7 @@ o.scrolloff = 10
 o.clipboard = "unnamedplus"
 o.cursorline = true
 o.cursorlineopt = "number"
+o.cmdheight = 0
 
 -- Indenting
 o.expandtab = true
@@ -16,6 +17,7 @@ o.shiftwidth = 2
 o.smartindent = true
 o.tabstop = 2
 o.softtabstop = 2
+o.wrap = false;
 
 opt.fillchars = { eob = " " }
 o.ignorecase = true
