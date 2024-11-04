@@ -21,6 +21,8 @@ return {
           hex_color = require('mini.hipatterns').gen_highlighter.hex_color(),
         },
       })
+      require ("mini.surround").setup()
+      require ("mini.cursorword").setup()
     end,
   }
 }
