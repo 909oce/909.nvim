@@ -11,11 +11,17 @@ return {
         [[/\ \/\ \/\  __//\ \_\ \ \ \_/ |\ \ \/\ \/\ \/\ \ ]],
         [[\ \_\ \_\ \____\ \____/\ \___/  \ \_\ \_\ \_\ \_\]],
         [[ \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/]],
+        -- [[███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗]],
+        -- [[████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║]],
+        -- [[██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║]],
+        -- [[██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║]],
+        -- [[██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║]],
+        -- [[╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝]],
       }
       dashboard.section.buttons.val = {
         dashboard.button( "e", "  New file" , ":ene<CR>"),
-        dashboard.button( "SPC f f", "󰈞  Find file"),
-        dashboard.button("SPC f r", "󰊄  Recently opened files"),
+        dashboard.button( "f", "󰈞  Find file", ":Ranger<CR>"),
+        dashboard.button("r", "󰊄  Recently opened files", "<cmd>Telescope oldfiles<CR>"),
         dashboard.button( "q", "󰅚  Quit NVIM" , ":qa<CR>"),
       }
       alpha.setup(dashboard.config)

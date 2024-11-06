@@ -4,7 +4,7 @@ return {
     config = function()
       require("ranger-nvim").setup({
         replace_netrw = true,
-        enable_cmds = false,
+        enable_cmds = true,
         ui = {
           border = "single",
           height = 0.75,
