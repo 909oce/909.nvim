@@ -25,6 +25,8 @@ local hl = vim.api.nvim_set_hl
 local get = vim.api.nvim_get_hl_by_name
 
 hl(0, 'LineNr', { fg = get('LineNr', true).foreground, bg = 'NONE' })
+hl(0, 'LineNrAbove', { fg = get('LineNrAbove', true).foreground, bg = 'NONE' })
+hl(0, 'LineNrBelow', { fg = get('LineNrBelow', true).foreground, bg = 'NONE' })
 hl(0, 'CursorLineNr', { fg = get('CursorLineNr', true).foreground , bg = 'NONE' })
 hl(0, 'SignColumn', { bg = 'NONE' })
 hl(0, 'CursorLine', { bg = 'NONE' })
@@ -41,7 +43,7 @@ hl(0, 'TelescopeBorder', { fg = '#aa9e7a' })
 hl(0, 'TelescopePromptPrefix', { fg = '#d4be98' })
 hl(0, 'TelescopeMatching', { fg = '#b8bb26' })
 hl(0, 'IblIndent', { fg = '#161616' })
-hl(0, 'MiniTablineCurrent', { fg = '#101010', bg = '#d4be98', bold = true })
+hl(0, 'MiniTablineCurrent', { fg = '#101010', bg = '#aa9e7a', bold = true })
 hl(0, 'MiniTablineModifiedVisible', { link = 'MiniTablineVisible' })
 hl(0, 'MiniTablineModifiedHidden', { link = 'MiniTablineHidden' })
 hl(0, 'MiniTablineModifiedCurrent', { link = 'MiniTablineCurrent' })
