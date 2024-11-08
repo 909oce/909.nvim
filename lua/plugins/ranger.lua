@@ -13,12 +13,6 @@ return {
           y = 0.5,
         }
       })
-      vim.api.nvim_set_keymap("n", "<leader>ef", "", {
-        noremap = true,
-        callback = function()
-          require("ranger-nvim").open(true)
-        end,
-      })
     end,
   }
 }

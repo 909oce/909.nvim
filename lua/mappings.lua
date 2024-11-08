@@ -25,6 +25,9 @@ map("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "telescope help 
 map("n", "<leader>ff", "<cmd>Telescope find_files hidden=true<cr>", { desc = "telescope find files" })
 map("n", "<leader>fr", "<cmd>Telescope oldfiles<CR>", { desc = "telescope recent files" })
 
+-- Ranger
+map("n", "<leader>ef", "<cmd>Ranger<CR>", { desc = "ranger" })
+
 -- buffers
 map("n", "<A-Tab>", "<cmd>bn<CR>", { desc = "next buffer"})
 map("n", "<AS-Tab>", "<cmd>bp<CR>", { desc = "prev buffer"})
