@@ -40,6 +40,3 @@ map("n", "<AS-Tab>", ":bp<CR>", { desc = "prev buffer"})
 map("n", "<leader>bd", ':Bdelete<CR>', { desc = "delete buffer" })
 map("n", "<leader>bp", ':bp<CR>', { desc = "previous buffer" })
 map("n", "<leader>bn", ':bn<CR>', { desc = "next buffer" })
-
--- nvimtree
-map("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
