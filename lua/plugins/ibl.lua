@@ -8,7 +8,7 @@ return {
           highlight = {"IblIndent"}
         },
         scope = {
-          highlight = {"IblIndent"}
+          highlight = {"IblScope"}
         },
       })
     end
