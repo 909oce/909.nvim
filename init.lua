@@ -8,9 +8,9 @@ end
 vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 
-require("lazy").setup(
-  {{import = "plugins"}})
-  require "options"
+require("lazy").setup("plugins")
+
+require "options"
   vim.schedule(function()
     require "mappings"
   end
