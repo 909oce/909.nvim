@@ -3,7 +3,10 @@ return {
     "echasnovski/mini.nvim",
     config = function()
       require "colors.909"
-      require ("mini.statusline").setup()
+      require ("mini.statusline").setup({
+        use_icons = true,
+        set_vim_settings = true
+      })
       require ("mini.statusline").section_location = function()
         return '%2l:%-2v'
       end
