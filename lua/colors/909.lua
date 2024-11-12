@@ -7,7 +7,7 @@ require('mini.base16').setup {
     base04 = '#80775d',  -- Darker foreground
     base05 = '#aa9e7a',  -- Default foreground
     base06 = '#d4be98',  -- Lighter foreground
-    base07 = '#e5d4a8',  -- Lightest foreground
+    base07 = '#d4be98',  -- Lightest foreground
     base08 = '#fb4934',  -- Red (errors, highlights)
     base09 = '#fe8019',  -- Orange (warnings)
     base0A = '#fabd2f',  -- Yellow
@@ -43,7 +43,7 @@ hl(0, 'TelescopeBorder', { fg = '#aa9e7a' })
 hl(0, 'TelescopePromptPrefix', { fg = '#d4be98' })
 hl(0, 'TelescopeMatching', { fg = '#b8bb26' })
 hl(0, 'IblIndent', { fg = '#161616' })
-hl(0, 'IblScope', { fg = '#202020' })
+hl(0, 'IblScope', { fg = '#161616' })
 hl(0, 'MiniTablineCurrent', { fg = '#101010', bg = '#d4be98', bold = true })
 hl(0, 'MiniTablineModifiedVisible', { link = 'MiniTablineVisible' })
 hl(0, 'MiniTablineModifiedHidden', { link = 'MiniTablineHidden' })
