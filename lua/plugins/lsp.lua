@@ -10,11 +10,9 @@ return {
       "hrsh7th/cmp-cmdline",
       "hrsh7th/nvim-cmp",
       "saadparwaiz1/cmp_luasnip",
-      "j-hui/fidget.nvim",
     },
 
     config = function()
-      require("fidget").setup()
       require("mason").setup()
       require("mason-lspconfig").setup({
         ensure_installed = {
@@ -42,11 +40,8 @@ return {
         }
       })
       local cmp = require("cmp")
-      local cmp_select = { behavior = cmp.SelectBehavior.Select }
       cmp.setup({
         mapping = cmp.mapping.preset.insert({
-          ["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
-          ["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
           ["<C-Enter>"] = cmp.mapping.confirm({ select = true }),
           ["<C-Space>"] = cmp.mapping.complete(),
         }),
@@ -55,16 +50,6 @@ return {
         }, {
           { name = "buffer" },
         })
-      })
-      vim.diagnostic.config({
-        update_in_insert = true,
-        float = {
-          focusable = false,
-          style = "minimal",
-          source = "always",
-          header = "",
-          prefix = "",
-        },
       })
     end,
   }
