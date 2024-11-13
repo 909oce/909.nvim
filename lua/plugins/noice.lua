@@ -10,7 +10,7 @@ return {
       require("notify").setup({
         on_open = function(win)
           if vim.api.nvim_win_is_valid(win) then
-            vim.api.nvim_win_set_config(win, { border = {'┌','─', '┐', '│', '┘','─', '└', '│'} })
+            vim.api.nvim_win_set_config(win, { border = { '┌', '─', '┐', '│', '┘', '─', '└', '│' } })
           end
         end,
         icons = {
@@ -19,7 +19,7 @@ return {
           INFO = " ",
           TRACE = "✎ ",
           WARN = " "
-      },
+        },
         render = "wrapped-compact",
         stages = "static"
       })
@@ -39,6 +39,21 @@ return {
             search_up = { icon = "?" },
           }
         },
+        routes = {
+          {
+            filter = {
+              event = "msg_show",
+              kind = "",
+              find = "written",
+            },
+            opts = {
+              skip = true
+            },
+          }
+        },
+        presets = {
+          long_message_to_split = true
+        }
       })
     end
   }
