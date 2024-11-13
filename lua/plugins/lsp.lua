@@ -10,10 +10,23 @@ return {
       "hrsh7th/cmp-cmdline",
       "hrsh7th/nvim-cmp",
       "saadparwaiz1/cmp_luasnip",
+      "stevearc/conform.nvim",
+      "LittleEndianRoot/mason-conform",
     },
-
     config = function()
       require("mason").setup()
+      require("conform").setup({
+        format_on_save = {
+          timeout_ms = 500,
+          lsp_format = "fallback",
+        },
+      })
+      require("mason-conform").setup({
+        ensure_installed = {
+          "black",
+          "prettierd",
+        }
+      })
       require("mason-lspconfig").setup({
         ensure_installed = {
           "hyprls",
@@ -23,7 +36,7 @@ return {
           "intelephense",
         },
         handlers = {
-          function (server_name)
+          function(server_name)
             require("lspconfig")[server_name].setup {}
           end,
           ["lua_ls"] = function()
