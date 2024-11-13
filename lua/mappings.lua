@@ -41,3 +41,8 @@ vim.cmd("cnoreabbrev bd Bd")
 
 -- Zen mode
 map("n", "<leader>z", ":ZenMode<CR>", { desc = "zen mode" })
+
+-- Menus
+map("n", "<leader>lm", ":Mason<CR>", { desc = "mason" })
+map("n", "<leader>ll", ":Lazy<CR>", { desc = "lazy" })
+map("n", "<leader>la", ":Alpha<CR>", { desc = "alpha" })
