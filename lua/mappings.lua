@@ -8,15 +8,11 @@ map("n", "<C-l>", "<C-w>l", { desc = "switch window right" })
 map("n", "<C-j>", "<C-w>j", { desc = "switch window down" })
 map("n", "<C-k>", "<C-w>k", { desc = "switch window up" })
 
-map("n", "<C-s>", "<cmd>w<CR>", { desc = "general save file" })
-map("n", "<C-c>", "<cmd>%y+<CR>", { desc = "general copy whole file" })
-
 map("n", "<leader>n", "<cmd>set nu!<CR>", { desc = "toggle line number" })
 map("n", "<leader>rn", "<cmd>set rnu!<CR>", { desc = "toggle relative number" })
 
 map("v", "J", ":m '>+1<CR>gv=gv")
 map("v", "K", ":m '<-2<CR>gv=gv")
-
 
 -- Comment
 map("n", "<leader>/", "gcc", { desc = "toggle comment", remap = true })
@@ -42,3 +38,6 @@ map("n", "<leader>bp", ':bp<CR>', { desc = "previous buffer" })
 map("n", "<leader>bn", ':bn<CR>', { desc = "next buffer" })
 vim.cmd("command! Bd Bdelete")
 vim.cmd("cnoreabbrev bd Bd")
+
+-- Zen mode
+map("n", "<leader>z", ":ZenMode<CR>", { desc = "zen mode" })
