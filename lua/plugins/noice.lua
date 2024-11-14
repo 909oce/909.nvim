@@ -34,9 +34,15 @@ return {
           view = "cmdline",
           format = {
             conceal = false,
-            cmdline = { icon = ">" },
-            search_down = { icon = "/" },
-            search_up = { icon = "?" },
+            cmdline = {
+              icon = ">"
+            },
+            search_down = {
+              icon = "/"
+            },
+            search_up = {
+              icon = "?"
+            },
           }
         },
         routes = {
@@ -45,6 +51,85 @@ return {
               event = "msg_show",
               kind = "",
               find = "written",
+            },
+            opts = {
+              skip = true
+            },
+          },
+          {
+            filter = {
+              event = "msg_show",
+              kind = "",
+              find = "yanked",
+            },
+            opts = {
+              skip = true
+            },
+          },
+          {
+            filter = {
+              event = "msg_show",
+              kind = "",
+              find = "/",
+            },
+            opts = {
+              skip = true
+            },
+          },
+          {
+            filter = {
+              event = "msg_show",
+              kind = "",
+              find = "more lines",
+            },
+            opts = {
+              skip = true
+            },
+          },
+          {
+            filter = {
+              event = "msg_show",
+              kind = "",
+              find = "fewer lines",
+            },
+            opts = {
+              skip = true
+            },
+          },
+          {
+            filter = {
+              event = "msg_show",
+              kind = "",
+              find = "more line",
+            },
+            opts = {
+              skip = true
+            },
+          },
+          {
+            filter = {
+              event = "msg_show",
+              kind = "",
+              find = "change",
+            },
+            opts = {
+              skip = true
+            },
+          },
+          {
+            filter = {
+              event = "msg_show",
+              kind = "",
+              find = "line less",
+            },
+            opts = {
+              skip = true
+            },
+          },
+          {
+            filter = {
+              event = "msg_show",
+              kind = "search_count",
             },
             opts = {
               skip = true
