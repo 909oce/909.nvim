@@ -1,7 +1,7 @@
 local opt = vim.opt
 local o = vim.o
 
-o.laststatus = 3
+opt.laststatus = 3
 o.showmode = false
 o.scrolloff = 10
 o.clipboard = "unnamedplus"
