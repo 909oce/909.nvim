@@ -35,7 +35,7 @@ return {
           format = {
             conceal = false,
             cmdline = {
-              icon = ">"
+              icon = ":"
             },
             search_down = {
               icon = "/"
@@ -51,76 +51,6 @@ return {
               event = "msg_show",
               kind = "",
               find = "written",
-            },
-            opts = {
-              skip = true
-            },
-          },
-          {
-            filter = {
-              event = "msg_show",
-              kind = "",
-              find = "yanked",
-            },
-            opts = {
-              skip = true
-            },
-          },
-          {
-            filter = {
-              event = "msg_show",
-              kind = "",
-              find = "/",
-            },
-            opts = {
-              skip = true
-            },
-          },
-          {
-            filter = {
-              event = "msg_show",
-              kind = "",
-              find = "more lines",
-            },
-            opts = {
-              skip = true
-            },
-          },
-          {
-            filter = {
-              event = "msg_show",
-              kind = "",
-              find = "fewer lines",
-            },
-            opts = {
-              skip = true
-            },
-          },
-          {
-            filter = {
-              event = "msg_show",
-              kind = "",
-              find = "more line",
-            },
-            opts = {
-              skip = true
-            },
-          },
-          {
-            filter = {
-              event = "msg_show",
-              kind = "",
-              find = "change",
-            },
-            opts = {
-              skip = true
-            },
-          },
-          {
-            filter = {
-              event = "msg_show",
-              kind = "",
-              find = "line less",
             },
             opts = {
               skip = true
