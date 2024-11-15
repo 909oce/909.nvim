@@ -31,18 +31,30 @@ return {
         },
         cmdline = {
           enabled = true,
-          view = "cmdline",
+          view = "cmdline_popup",
           format = {
-            conceal = false,
-            cmdline = {
-              icon = ":"
+            cmdline = false,
+            search_down = false,
+            search_up = false,
+            filter = false,
+            lua = false,
+            help = false,
+            input = false,
+          }
+        },
+        messages = {
+          view_search = false,
+        },
+        views = {
+          cmdline_popup = {
+            border = {
+              style = "none",
+              padding = { 1, 1 },
             },
-            search_down = {
-              icon = "/"
-            },
-            search_up = {
-              icon = "?"
-            },
+            filter_options = {},
+            win_options = {
+              winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
+            }
           }
         },
         routes = {
@@ -57,14 +69,11 @@ return {
             },
           },
           {
+            view = "notify",
             filter = {
-              event = "msg_show",
-              kind = "search_count",
+              event = "msg_showmode"
             },
-            opts = {
-              skip = true
-            },
-          }
+          },
         },
         presets = {
           long_message_to_split = true
