@@ -1,5 +1,5 @@
 return {
   {
-    "wolandark/vim-live-server",
+    "909oce/webserver.nvim",
   }
 }
