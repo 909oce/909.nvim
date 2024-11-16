@@ -8,6 +8,7 @@ o.clipboard = "unnamedplus"
 o.cursorline = true
 o.cursorlineopt = "number"
 o.cmdheight = 0
+o.autochdir = true
 
 -- Indenting
 o.expandtab = true
