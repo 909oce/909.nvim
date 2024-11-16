@@ -1,6 +1,7 @@
 return {
   {
     'vyfor/cord.nvim',
+    branch = 'cwd',
     build = './build || .\\build',
     event = 'VeryLazy',
     config = function()
