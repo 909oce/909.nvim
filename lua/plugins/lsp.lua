@@ -49,6 +49,13 @@ return {
               }
             }
           end,
+          ["intelephense"] = function()
+            require("lspconfig").intelephense.setup {
+              init_options = {
+                globalStoragePath = os.getenv('HOME') .. '/.local/share/intelephense'
+              }
+            }
+          end
         }
       })
       local cmp = require("cmp")
