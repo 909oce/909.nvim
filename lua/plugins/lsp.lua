@@ -33,7 +33,6 @@ return {
           "lua_ls",
           "cssls",
           "html",
-          "intelephense",
         },
         handlers = {
           function(server_name)
