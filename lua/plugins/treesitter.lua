@@ -28,14 +28,6 @@ return {
         },
         vim.filetype.add({ pattern = { [".*/hypr/.*%.conf"] = "hyprlang" } })
       })
-      vim.api.nvim_create_autocmd("BufEnter", {
-        callback = function()
-          if not vim.b.treesitter_highlight then
-            vim.cmd("TSBufEnable highlight")
-            vim.b.treesitter_highlight = true
-          end
-        end
-      })
     end,
   }
 }
