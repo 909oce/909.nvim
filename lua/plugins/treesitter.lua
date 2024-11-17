@@ -11,7 +11,6 @@ return {
           "vimdoc",
           "python",
           "php",
-          "heex",
           "javascript",
           "html",
           "css",
