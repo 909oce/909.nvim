@@ -9,7 +9,6 @@ return {
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-cmdline",
       "hrsh7th/nvim-cmp",
-      "saadparwaiz1/cmp_luasnip",
       "stevearc/conform.nvim",
       "LittleEndianRoot/mason-conform",
     },
@@ -27,6 +26,7 @@ return {
           "prettierd",
         }
       })
+      local capabilities = require('cmp_nvim_lsp').default_capabilities()
       require("mason-lspconfig").setup({
         ensure_installed = {
           "hyprls",
@@ -36,10 +36,13 @@ return {
         },
         handlers = {
           function(server_name)
-            require("lspconfig")[server_name].setup {}
+            require("lspconfig")[server_name].setup {
+              capabilities = capabilities,
+            }
           end,
           ["lua_ls"] = function()
             require("lspconfig").lua_ls.setup {
+              capabilities = capabilities,
               settings = {
                 Lua = {
                   diagnostics = {
@@ -51,6 +54,7 @@ return {
           end,
           ["intelephense"] = function()
             require("lspconfig").intelephense.setup {
+              capabilities = capabilities,
               init_options = {
                 globalStoragePath = os.getenv('HOME') .. '/.local/share/intelephense'
               }
@@ -66,9 +70,29 @@ return {
         }),
         sources = require("cmp").config.sources({
           { name = "nvim_lsp" },
-        }, {
           { name = "buffer" },
+          { name = "path" },
+          { name = "cmdline" },
         })
+      })
+      cmp.setup.cmdline(':', {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = cmp.config.sources({
+          { name = 'path' }
+        }, {
+          {
+            name = 'cmdline',
+            option = {
+              ignore_cmds = { 'Man', '!' }
+            }
+          }
+        })
+      })
+      cmp.setup.cmdline('/', {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = {
+          { name = 'buffer' }
+        }
       })
     end,
   }
