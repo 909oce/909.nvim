@@ -1,7 +1,6 @@
 return {
   {
     'vyfor/cord.nvim',
-    branch = 'cwd',
     build = './build || .\\build',
     event = 'VeryLazy',
     config = function()
@@ -54,7 +53,14 @@ return {
             url = 'git',
           },
         },
-        assets = nil,
+        assets = {
+          ranger = {
+            name = 'Ranger',
+            tooltip = 'ranger.nvim',
+            type = 1,
+            icon = "https://raw.githubusercontent.com/vyfor/cord.nvim/master/assets/file_browser/default.png"
+          }
+        }
       });
     end
   }
