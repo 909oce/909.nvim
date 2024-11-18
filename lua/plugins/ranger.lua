@@ -1,6 +1,6 @@
 return {
   {
-    "kelly-lin/ranger.nvim",
+    "909oce/ranger.nvim",
     config = function()
       require("ranger-nvim").setup({
         replace_netrw = true,
