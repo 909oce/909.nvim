@@ -24,6 +24,7 @@ return {
         end,
       })
       require("mini.icons").setup()
+      require("mini.icons").mock_nvim_web_devicons()
       require("mini.hipatterns").setup({
         highlighters = {
           hex_color = require('mini.hipatterns').gen_highlighter.hex_color(),
