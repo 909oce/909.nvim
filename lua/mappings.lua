@@ -30,8 +30,8 @@ map("n", "<leader>fc", "<cmd>Telescope highlights<CR>", { desc = "telescope find
 map("n", "<leader>ef", "<cmd>Ranger<CR>", { desc = "ranger" })
 
 -- buffers
-map("n", "<A-Tab>", ":bn<CR>", { desc = "next buffer"})
-map("n", "<AS-Tab>", ":bp<CR>", { desc = "prev buffer"})
+map("n", "<A-Tab>", ":bn<CR>", { desc = "next buffer" })
+map("n", "<AS-Tab>", ":bp<CR>", { desc = "prev buffer" })
 
 map("n", "<leader>bd", ':Bdelete<CR>', { desc = "delete buffer" })
 map("n", "<leader>bp", ':bp<CR>', { desc = "previous buffer" })
