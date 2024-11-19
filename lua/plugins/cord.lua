@@ -1,12 +1,12 @@
 return {
   {
-    'vyfor/cord.nvim',
-    build = './build || .\\build',
-    event = 'VeryLazy',
+    "vyfor/cord.nvim",
+    build = "./build || .\\build",
+    event = "VeryLazy",
     config = function()
-      require('cord').setup({
+      require("cord").setup {
         usercmds = true,
-        log_level = 'error',
+        log_level = "error",
         timer = {
           interval = 1500,
           reset_on_idle = false,
@@ -14,8 +14,8 @@ return {
         },
         editor = {
           image = nil,
-          client = 'neovim',
-          tooltip = '',
+          client = "neovim",
+          tooltip = "",
         },
         display = {
           show_time = true,
@@ -28,40 +28,40 @@ return {
         lsp = {
           show_problem_count = false,
           severity = 1,
-          scope = 'workspace',
+          scope = "workspace",
         },
         idle = {
           enable = true,
           show_status = true,
           timeout = 300000,
           disable_on_focus = false,
-          text = 'Idle',
-          tooltip = '💤',
+          text = "Idle",
+          tooltip = "💤",
         },
         text = {
-          viewing = 'Viewing {}',
-          editing = 'Editing {}',
-          file_browser = 'Browsing files in {}',
-          plugin_manager = 'Managing plugins in {}',
-          lsp_manager = 'Configuring LSP in {}',
-          vcs = 'Committing changes in {}',
-          workspace = '',
+          viewing = "Viewing {}",
+          editing = "Editing {}",
+          file_browser = "Browsing files in {}",
+          plugin_manager = "Managing plugins in {}",
+          lsp_manager = "Configuring LSP in {}",
+          vcs = "Committing changes in {}",
+          workspace = "",
         },
         buttons = {
           {
-            label = 'View Repository',
-            url = 'git',
+            label = "View Repository",
+            url = "git",
           },
         },
         assets = {
           ranger = {
-            name = 'Ranger',
-            tooltip = 'ranger.nvim',
+            name = "Ranger",
+            tooltip = "ranger.nvim",
             type = 1,
-            icon = "https://raw.githubusercontent.com/vyfor/cord.nvim/master/assets/file_browser/default.png"
-          }
-        }
-      });
-    end
-  }
+            icon = "default",
+          },
+        },
+      }
+    end,
+  },
 }
