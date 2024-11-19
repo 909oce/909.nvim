@@ -9,23 +9,48 @@ return {
       "hrsh7th/nvim-cmp",
       "stevearc/conform.nvim",
       "LittleEndianRoot/mason-conform",
+      -- "mfussenegger/nvim-lint",
+      -- "rshkarin/mason-nvim-lint",
     },
     config = function()
       require("mason").setup()
-      require("conform").setup({
+      require("conform").setup {
+        formatters_by_ft = {
+          lua = { "stylua" },
+          python = { "isort", "black" },
+        },
         format_on_save = {
           timeout_ms = 500,
           lsp_format = "fallback",
         },
-      })
-      require("mason-conform").setup({
+      }
+      require("mason-conform").setup {
         ensure_installed = {
           "black",
           "prettierd",
-        }
-      })
-      local capabilities = require('cmp_nvim_lsp').default_capabilities()
-      require("mason-lspconfig").setup({
+          "isort",
+          "stylua",
+        },
+        automatic_installation = false,
+      }
+      -- require("lint").linters_by_ft = {
+      --   lua = { "luac" },
+      --   python = { "pylint" },
+      -- }
+      -- vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+      --   callback = function()
+      --     require("lint").try_lint()
+      --   end,
+      -- })
+      --
+      -- require("mason-nvim-lint").setup {
+      --   ensure_installed = {
+      --     "luacheck",
+      --   },
+      --   automatic_installation = false,
+      -- }
+      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+      require("mason-lspconfig").setup {
         ensure_installed = {
           "hyprls",
           "lua_ls",
@@ -44,33 +69,33 @@ return {
               settings = {
                 Lua = {
                   diagnostics = {
-                    globals = { "vim" }
-                  }
-                }
-              }
+                    globals = { "vim" },
+                  },
+                },
+              },
             }
           end,
           ["intelephense"] = function()
             require("lspconfig").intelephense.setup {
               capabilities = capabilities,
               init_options = {
-                globalStoragePath = os.getenv('HOME') .. '/.local/share/intelephense'
-              }
+                globalStoragePath = os.getenv "HOME" .. "/.local/share/intelephense",
+              },
             }
-          end
-        }
-      })
-      local cmp = require("cmp")
-      cmp.setup({
-        mapping = cmp.mapping.preset.insert({
-          ["<C-Enter>"] = cmp.mapping.confirm({ select = true }),
+          end,
+        },
+      }
+      local cmp = require "cmp"
+      cmp.setup {
+        mapping = cmp.mapping.preset.insert {
+          ["<C-Enter>"] = cmp.mapping.confirm { select = true },
           ["<C-Space>"] = cmp.mapping.complete(),
-        }),
-        sources = require("cmp").config.sources({
+        },
+        sources = require("cmp").config.sources {
           { name = "nvim_lsp" },
           { name = "buffer" },
-        })
-      })
+        },
+      }
     end,
-  }
+  },
 }
