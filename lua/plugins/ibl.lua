@@ -1,16 +1,10 @@
 return {
   {
-    "lukas-reineke/indent-blankline.nvim",
-    event = "VeryLazy",
+    "nvimdev/indentmini.nvim",
     config = function()
-      require("ibl").setup({
-        indent = {
-          highlight = {"IblIndent"}
-        },
-        scope = {
-          highlight = {"IblScope"}
-        },
-      })
-    end
-  }
+      require("indentmini").setup {
+        char = "▎",
+      }
+    end,
+  },
 }
