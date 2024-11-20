@@ -33,14 +33,11 @@ map("n", "<leader>ef", "<cmd>Ranger<CR>", { desc = "ranger" })
 map("n", "<A-Tab>", ":bn<CR>", { desc = "next buffer" })
 map("n", "<AS-Tab>", ":bp<CR>", { desc = "prev buffer" })
 
-map("n", "<leader>bd", ':Bdelete<CR>', { desc = "delete buffer" })
-map("n", "<leader>bp", ':bp<CR>', { desc = "previous buffer" })
-map("n", "<leader>bn", ':bn<CR>', { desc = "next buffer" })
-vim.cmd("command! Bd Bdelete")
-vim.cmd("cnoreabbrev bd Bd")
-
--- Zen mode
-map("n", "<leader>z", ":ZenMode<CR>", { desc = "zen mode" })
+map("n", "<leader>bd", ":Bdelete<CR>", { desc = "delete buffer" })
+map("n", "<leader>bp", ":bp<CR>", { desc = "previous buffer" })
+map("n", "<leader>bn", ":bn<CR>", { desc = "next buffer" })
+vim.cmd "command! Bd Bdelete"
+vim.cmd "cnoreabbrev bd Bd"
 
 -- Menus
 map("n", "<leader>lm", ":Mason<CR>", { desc = "mason" })

@@ -28,7 +28,7 @@ o.number = true
 o.numberwidth = 2
 
 -- disable nvim intro
-opt.shortmess:append "sI"
+opt.shortmess:append "sIcF"
 
 o.signcolumn = "no"
 o.splitbelow = true
