@@ -90,6 +90,14 @@ return {
         mapping = cmp.mapping.preset.insert {
           ["<C-Enter>"] = cmp.mapping.confirm { select = true },
           ["<C-Space>"] = cmp.mapping.complete(),
+          ["<Down>"] = cmp.mapping(function(fallback)
+            cmp.close()
+            fallback()
+          end, { "i" }),
+          ["<Up>"] = cmp.mapping(function(fallback)
+            cmp.close()
+            fallback()
+          end, { "i" }),
         },
         sources = require("cmp").config.sources {
           { name = "nvim_lsp" },
