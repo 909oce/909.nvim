@@ -4,13 +4,13 @@ return {
     event = "VeryLazy",
     dependencies = {
       "MunifTanjim/nui.nvim",
-      "rcarriga/nvim-notify"
+      "rcarriga/nvim-notify",
     },
     config = function()
-      require("notify").setup({
+      require("notify").setup {
         on_open = function(win)
           if vim.api.nvim_win_is_valid(win) then
-            vim.api.nvim_win_set_config(win, { border = { '┌', '─', '┐', '│', '┘', '─', '└', '│' } })
+            vim.api.nvim_win_set_config(win, { border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" } })
           end
         end,
         icons = {
@@ -18,16 +18,18 @@ return {
           ERROR = " ",
           INFO = " ",
           TRACE = "✎ ",
-          WARN = " "
+          WARN = " ",
         },
         render = "wrapped-compact",
-        stages = "static"
-      })
-      require("noice").setup({
+        stages = "static",
+      }
+      require("noice").setup {
         lsp = {
-          ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-          ["vim.lsp.util.stylize_markdown"] = true,
-          ["cmp.entry.get_documentation"] = true,
+          override = {
+            ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+            ["vim.lsp.util.stylize_markdown"] = true,
+            ["cmp.entry.get_documentation"] = true,
+          },
         },
         cmdline = {
           enabled = true,
@@ -40,7 +42,7 @@ return {
             lua = false,
             help = false,
             input = false,
-          }
+          },
         },
         messages = {
           view_search = false,
@@ -54,8 +56,18 @@ return {
             filter_options = {},
             win_options = {
               winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
-            }
-          }
+            },
+          },
+          confirm = {
+            position = {
+              row = "50%",
+              col = "50%",
+            },
+            border = {
+              style = "single",
+              padding = { 1, 1 },
+            },
+          },
         },
         routes = {
           {
@@ -65,20 +77,20 @@ return {
               find = "written",
             },
             opts = {
-              skip = true
+              skip = true,
             },
           },
           {
             view = "notify",
             filter = {
-              event = "msg_showmode"
+              event = "msg_showmode",
             },
           },
         },
         presets = {
-          long_message_to_split = true
-        }
-      })
-    end
-  }
+          long_message_to_split = true,
+        },
+      }
+    end,
+  },
 }
