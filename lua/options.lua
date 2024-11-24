@@ -1,5 +1,6 @@
 local opt = vim.opt
 local o = vim.o
+local g = vim.g
 
 opt.laststatus = 3
 o.showmode = false
@@ -9,6 +10,7 @@ o.cursorline = true
 o.cursorlineopt = "number"
 o.cmdheight = 0
 o.autochdir = true
+g.health = { style = "float" }
 
 -- Indenting
 o.expandtab = true
