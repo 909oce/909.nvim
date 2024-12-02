@@ -33,6 +33,12 @@ return {
         },
         automatic_installation = false,
       }
+
+      vim.diagnostic.config {
+        virtual_text = {
+          prefix = "■",
+        },
+      }
       -- require("lint").linters_by_ft = {
       --   lua = { "luac" },
       --   python = { "pylint" },
