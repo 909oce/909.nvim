@@ -1,6 +1,7 @@
 return {
   {
     "williamboman/mason-lspconfig.nvim",
+    event = "BufEnter",
     dependencies = {
       "williamboman/mason.nvim",
       "neovim/nvim-lspconfig",
@@ -33,10 +34,9 @@ return {
         },
         automatic_installation = false,
       }
-
       vim.diagnostic.config {
         virtual_text = {
-          prefix = "■",
+          prefix = "",
         },
       }
       -- require("lint").linters_by_ft = {
