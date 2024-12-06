@@ -1,11 +1,12 @@
 return {
   {
     "gbprod/cutlass.nvim",
+    event = "VeryLazy",
     config = function()
-      require("cutlass").setup({
+      require("cutlass").setup {
         cut_key = "x",
-        override_del = true
-      })
-    end
-  }
+        override_del = true,
+      }
+    end,
+  },
 }
