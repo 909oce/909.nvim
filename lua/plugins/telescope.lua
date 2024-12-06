@@ -1,13 +1,14 @@
 return {
   {
     "nvim-telescope/telescope.nvim",
-    dependencies = {'nvim-lua/plenary.nvim'},
+    event = "VeryLazy",
+    dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
-      require("telescope").setup({
+      require("telescope").setup {
         defaults = {
-          borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" }
-        }
-      })
+          borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+        },
+      }
     end,
-  }
+  },
 }
