@@ -8,10 +8,11 @@ return {
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
       "hrsh7th/nvim-cmp",
+      "hrsh7th/cmp-nvim-lua",
       "stevearc/conform.nvim",
       "LittleEndianRoot/mason-conform",
-      -- "mfussenegger/nvim-lint",
-      -- "rshkarin/mason-nvim-lint",
+      "mfussenegger/nvim-lint",
+      "rshkarin/mason-nvim-lint",
     },
     config = function()
       require("mason").setup()
@@ -39,22 +40,22 @@ return {
           prefix = "",
         },
       }
-      -- require("lint").linters_by_ft = {
-      --   lua = { "luac" },
-      --   python = { "pylint" },
-      -- }
-      -- vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-      --   callback = function()
-      --     require("lint").try_lint()
-      --   end,
-      -- })
-      --
-      -- require("mason-nvim-lint").setup {
-      --   ensure_installed = {
-      --     "luacheck",
-      --   },
-      --   automatic_installation = false,
-      -- }
+      require("lint").linters_by_ft = {
+        -- lua = { "luac" },
+        -- python = { "pylint" },
+      }
+      vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+        callback = function()
+          require("lint").try_lint()
+        end,
+      })
+
+      require("mason-nvim-lint").setup {
+        -- ensure_installed = {
+        --   "luacheck",
+        -- },
+        automatic_installation = false,
+      }
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
       require("mason-lspconfig").setup {
         ensure_installed = {
@@ -108,6 +109,7 @@ return {
         sources = require("cmp").config.sources {
           { name = "nvim_lsp" },
           { name = "buffer" },
+          { name = "nvim_lua" },
         },
       }
     end,
