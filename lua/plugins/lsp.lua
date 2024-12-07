@@ -11,8 +11,10 @@ return {
       "hrsh7th/cmp-nvim-lua",
       "stevearc/conform.nvim",
       "LittleEndianRoot/mason-conform",
-      "mfussenegger/nvim-lint",
-      "rshkarin/mason-nvim-lint",
+      -- "mfussenegger/nvim-lint",
+      -- "rshkarin/mason-nvim-lint",
+      "buschco/nvim-cmp-ts-tag-close",
+      "onsails/lspkind.nvim",
     },
     config = function()
       require("mason").setup()
@@ -40,22 +42,22 @@ return {
           prefix = "",
         },
       }
-      require("lint").linters_by_ft = {
-        -- lua = { "luac" },
-        -- python = { "pylint" },
-      }
-      vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-        callback = function()
-          require("lint").try_lint()
-        end,
-      })
-
-      require("mason-nvim-lint").setup {
-        -- ensure_installed = {
-        --   "luacheck",
-        -- },
-        automatic_installation = false,
-      }
+      -- require("lint").linters_by_ft = {
+      --   lua = { "luac" },
+      --   python = { "pylint" },
+      -- }
+      -- vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+      --   callback = function()
+      --     require("lint").try_lint()
+      --   end,
+      -- })
+      --
+      -- require("mason-nvim-lint").setup {
+      --   ensure_installed = {
+      --     "luacheck",
+      --   },
+      --   automatic_installation = false,
+      -- }
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
       require("mason-lspconfig").setup {
         ensure_installed = {
@@ -92,8 +94,30 @@ return {
           end,
         },
       }
+      require("nvim-cmp-ts-tag-close").setup {
+        skip_tags = {
+          "img",
+        },
+      }
       local cmp = require "cmp"
       cmp.setup {
+        view = {
+          entries = {
+            name = "custom",
+            selection_order = "near_cursor",
+          },
+        },
+        window = {
+          completion = {
+            scrollbar = false,
+          },
+        },
+        formatting = {
+          format = require("lspkind").cmp_format {
+            maxwidth = 20,
+            ellipsis_char = "...",
+          },
+        },
         mapping = cmp.mapping.preset.insert {
           ["<C-Enter>"] = cmp.mapping.confirm { select = true },
           ["<C-Space>"] = cmp.mapping.complete(),
@@ -110,6 +134,7 @@ return {
           { name = "nvim_lsp" },
           { name = "buffer" },
           { name = "nvim_lua" },
+          { name = "nvim-cmp-ts-tag-close" },
         },
       }
     end,
