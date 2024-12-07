@@ -17,7 +17,13 @@ return {
       "onsails/lspkind.nvim",
     },
     config = function()
-      require("mason").setup()
+      require("mason").setup {
+        ui = {
+          border = "single",
+          width = 0.8,
+          height = 0.7,
+        },
+      }
       require("conform").setup {
         formatters_by_ft = {
           lua = { "stylua" },
@@ -39,7 +45,15 @@ return {
       }
       vim.diagnostic.config {
         virtual_text = {
-          prefix = "",
+          prefix = function(diagnostic)
+            local icons = {
+              [vim.diagnostic.severity.ERROR] = " ",
+              [vim.diagnostic.severity.WARN] = " ",
+              [vim.diagnostic.severity.INFO] = " ",
+              [vim.diagnostic.severity.HINT] = " ",
+            }
+            return icons[diagnostic.severity] or ""
+          end,
         },
       }
       -- require("lint").linters_by_ft = {

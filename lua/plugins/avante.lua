@@ -18,6 +18,17 @@ return {
     config = function()
       require("avante").setup {
         provider = "openai",
+        windows = {
+          sidebar_header = {
+            rounded = false,
+          },
+          edit = {
+            border = "single",
+          },
+          ask = {
+            border = "single",
+          },
+        },
       }
     end,
   },

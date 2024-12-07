@@ -46,8 +46,14 @@ return {
         },
         messages = {
           view_search = false,
+          view_history = "popup",
         },
         views = {
+          popup = {
+            border = {
+              style = "single",
+            },
+          },
           cmdline_popup = {
             border = {
               style = "none",
@@ -55,7 +61,9 @@ return {
             },
             filter_options = {},
             win_options = {
-              winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
+              winhighlight = {
+                Normal = "CommandLineNoice",
+              },
             },
           },
           confirm = {
