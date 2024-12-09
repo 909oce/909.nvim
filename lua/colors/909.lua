@@ -17,7 +17,7 @@ require("mini.base16").setup {
     base0E = "#d3869b", -- Magenta
     base0F = "#d65d0e", -- Brown (special warnings)
   },
-  use_cterm = true, -- This is optional; set it if you're using terminal Neovim
+  use_cterm = true,
   plugins = { default = true },
 }
 
@@ -49,6 +49,7 @@ hl(0, "MiniTablineModifiedVisible", { link = "MiniTablineVisible" })
 hl(0, "MiniTablineModifiedHidden", { link = "MiniTablineHidden" })
 hl(0, "MiniTablineModifiedCurrent", { link = "MiniTablineCurrent" })
 hl(0, "MiniStatuslineModeNormal", { fg = "#101010", bg = "#d4be98", bold = true })
+hl(0, "MiniTablineFill", { link = "Normal" })
 hl(0, "AlphaHeader", { link = "Normal" })
 hl(0, "AlphaButton", { link = "Normal" })
 hl(0, "NoiceConfirmBorder", { link = "NormalFloat" })
@@ -60,3 +61,4 @@ hl(0, "DiagnosticVirtualTextInfo", { fg = get("DiagnosticInfo", true).foreground
 hl(0, "DiagnosticVirtualTextHint", { fg = get("DiagnosticHint", true).foreground, bg = "#29312E" })
 hl(0, "NormalFloat", { link = "Normal" })
 hl(0, "CommandLineNoice", { fg = get("Normal", true).foreground, bg = "#161616" })
+hl(0, "NoicePopup", { fg = get("Normal", true).foreground, bg = "#161616" })

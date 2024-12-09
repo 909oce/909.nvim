@@ -11,6 +11,7 @@ o.cursorlineopt = "number"
 o.cmdheight = 0
 o.autochdir = true
 g.health = { style = "float" }
+o.pumheight = 10
 
 -- Indenting
 o.expandtab = true

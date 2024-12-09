@@ -125,6 +125,9 @@ return {
           completion = {
             scrollbar = false,
           },
+          documentation = {
+            winhighlight = "Normal:CmpItemMenu",
+          },
         },
         formatting = {
           format = require("lspkind").cmp_format {
