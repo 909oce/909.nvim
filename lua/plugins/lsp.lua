@@ -39,12 +39,8 @@ return {
 
       require("mason-conform").setup {
         ensure_installed = {
-          "black",
           "prettierd",
-          "isort",
-          "stylua",
         },
-        automatic_installation = false,
       }
 
       vim.diagnostic.config {
@@ -80,7 +76,6 @@ return {
         ensure_installed = {
           "luacheck",
         },
-        automatic_installation = false,
       }
 
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -160,7 +155,7 @@ return {
             fallback()
           end, { "i" }),
         },
-        sources = require("cmp").config.sources {
+        sources = cmp.config.sources {
           { name = "nvim_lsp" },
           { name = "buffer" },
           { name = "nvim_lua" },
