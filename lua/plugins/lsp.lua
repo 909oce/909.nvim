@@ -11,11 +11,12 @@ return {
       "hrsh7th/cmp-nvim-lua",
       "stevearc/conform.nvim",
       "LittleEndianRoot/mason-conform",
-      -- "mfussenegger/nvim-lint",
-      -- "rshkarin/mason-nvim-lint",
+      "mfussenegger/nvim-lint",
+      "rshkarin/mason-nvim-lint",
       "buschco/nvim-cmp-ts-tag-close",
       "onsails/lspkind.nvim",
     },
+
     config = function()
       require("mason").setup {
         ui = {
@@ -24,6 +25,7 @@ return {
           height = 0.7,
         },
       }
+
       require("conform").setup {
         formatters_by_ft = {
           lua = { "stylua" },
@@ -34,6 +36,7 @@ return {
           lsp_format = "fallback",
         },
       }
+
       require("mason-conform").setup {
         ensure_installed = {
           "black",
@@ -43,6 +46,7 @@ return {
         },
         automatic_installation = false,
       }
+
       vim.diagnostic.config {
         virtual_text = {
           prefix = function(diagnostic)
@@ -56,22 +60,29 @@ return {
           end,
         },
       }
-      -- require("lint").linters_by_ft = {
-      --   lua = { "luac" },
-      --   python = { "pylint" },
-      -- }
-      -- vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-      --   callback = function()
-      --     require("lint").try_lint()
-      --   end,
-      -- })
-      --
-      -- require("mason-nvim-lint").setup {
-      --   ensure_installed = {
-      --     "luacheck",
-      --   },
-      --   automatic_installation = false,
-      -- }
+
+      require("lint").linters_by_ft = {
+        lua = { "luacheck" },
+      }
+
+      require("lint.linters.luacheck").args = {
+        "--globals",
+        "vim",
+      }
+
+      vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+        callback = function()
+          require("lint").try_lint()
+        end,
+      })
+
+      require("mason-nvim-lint").setup {
+        ensure_installed = {
+          "luacheck",
+        },
+        automatic_installation = false,
+      }
+
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
       require("mason-lspconfig").setup {
         ensure_installed = {
@@ -108,11 +119,13 @@ return {
           end,
         },
       }
+
       require("nvim-cmp-ts-tag-close").setup {
         skip_tags = {
           "img",
         },
       }
+
       local cmp = require "cmp"
       cmp.setup {
         view = {
