@@ -39,8 +39,12 @@ return {
 
       require("mason-conform").setup {
         ensure_installed = {
+          "black",
           "prettierd",
+          "isort",
+          "stylua",
         },
+        automatic_installation = false,
       }
 
       vim.diagnostic.config {
@@ -76,6 +80,7 @@ return {
         ensure_installed = {
           "luacheck",
         },
+        automatic_installation = false,
       }
 
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
