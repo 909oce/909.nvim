@@ -9,6 +9,7 @@ return {
         content = {
           active = function()
             local MiniStatusline = require "mini.statusline"
+            local lsp_names = {}
 
             MiniStatusline.section_lsp = function(args)
               if MiniStatusline.is_truncated(args.trunc_width) then
@@ -20,8 +21,12 @@ return {
                 return ""
               end
 
+              for _, client in ipairs(buf_clients) do
+                table.insert(lsp_names, client.name)
+              end
+
               local icon = args.icon or (MiniStatusline.config.use_icons and "󰰎" or "LSP")
-              return icon
+              return icon .. " " .. table.concat(lsp_names, ", ")
             end
 
             MiniStatusline.section_location = function()
