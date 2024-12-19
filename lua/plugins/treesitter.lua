@@ -3,7 +3,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     config = function()
-      require("nvim-treesitter").setup({
+      require("nvim-treesitter").setup {
         ensure_installed = {
           "c",
           "lua",
@@ -14,7 +14,12 @@ return {
           "javascript",
           "html",
           "css",
-          "hyprlang"
+          "hyprlang",
+          "markdown",
+          "markdown_inline",
+          "latex",
+          "bash",
+          "regex",
         },
         auto_install = true,
         highlight = {
@@ -24,8 +29,8 @@ return {
         indent = {
           enable = true,
         },
-        vim.filetype.add({ pattern = { [".*/hypr/.*%.conf"] = "hyprlang" } })
-      })
+        vim.filetype.add { pattern = { [".*/hypr/.*%.conf"] = "hyprlang" } },
+      }
     end,
-  }
+  },
 }
