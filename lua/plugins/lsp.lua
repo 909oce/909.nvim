@@ -27,20 +27,15 @@ return {
       }
 
       require("conform").setup {
+        format_on_save = {
+          timeout_ms = 500,
+          lsp_format = "fallback",
+        },
         formatters_by_ft = {
           lua = { "stylua" },
           python = { "isort", "black" },
         },
       }
-      vim.api.nvim_create_autocmd("BufWritePre", {
-        pattern = "*",
-        callback = function(args)
-          local diagnostics = vim.diagnostic.get(args.buf, { severity = vim.diagnostic.severity.ERROR })
-          if #diagnostics == 0 then
-            require("conform").format { bufnr = args.buf }
-          end
-        end,
-      })
 
       require("mason-conform").setup {
         ensure_installed = {
