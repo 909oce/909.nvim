@@ -5,21 +5,7 @@ return {
     config = function()
       require("nvim-treesitter").setup {
         ensure_installed = {
-          "c",
           "lua",
-          "vim",
-          "vimdoc",
-          "python",
-          "php",
-          "javascript",
-          "html",
-          "css",
-          "hyprlang",
-          "markdown",
-          "markdown_inline",
-          "latex",
-          "bash",
-          "regex",
         },
         auto_install = true,
         highlight = {

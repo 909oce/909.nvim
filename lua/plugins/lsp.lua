@@ -39,9 +39,6 @@ return {
 
       require("mason-conform").setup {
         ensure_installed = {
-          "black",
-          "prettierd",
-          "isort",
           "stylua",
         },
         automatic_installation = false,
@@ -86,10 +83,7 @@ return {
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
       require("mason-lspconfig").setup {
         ensure_installed = {
-          "hyprls",
           "lua_ls",
-          "cssls",
-          "html",
         },
         handlers = {
           function(server_name)
