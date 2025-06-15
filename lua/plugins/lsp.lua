@@ -18,6 +18,18 @@ return {
     },
 
     config = function()
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = "checkhealth",
+        callback = function()
+          local win_id = vim.api.nvim_get_current_win()
+          if vim.api.nvim_win_get_config(win_id).relative ~= "" then
+            vim.api.nvim_win_set_config(win_id, {
+              border = "single",
+            })
+          end
+        end,
+      })
+
       vim.lsp.config.lua_ls = {
         settings = {
           Lua = {
@@ -38,6 +50,7 @@ return {
           border = "single",
           width = 0.8,
           height = 0.7,
+          backdrop = 100,
         },
       }
 
