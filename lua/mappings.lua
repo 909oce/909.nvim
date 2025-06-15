@@ -40,4 +40,3 @@ vim.cmd "cnoreabbrev bd Bd"
 map("n", "<leader>lm", ":Mason<CR>", { desc = "mason" })
 map("n", "<leader>ll", ":Lazy<CR>", { desc = "lazy" })
 map("n", "<leader>la", ":Alpha<CR>", { desc = "alpha" })
-map("n", "<leader>pt", ":Precognition toggle<CR>", { desc = "precognition toggle" })
