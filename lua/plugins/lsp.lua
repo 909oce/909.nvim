@@ -18,6 +18,21 @@ return {
     },
 
     config = function()
+      vim.lsp.config.lua_ls = {
+        settings = {
+          Lua = {
+            diagnostics = {
+              globals = { "vim" },
+            },
+          },
+        },
+      }
+      vim.lsp.config.intelephense = {
+        init_options = {
+          globalStoragePath = os.getenv "HOME" .. "/.local/share/intelephense",
+        },
+      }
+
       require("mason").setup {
         ui = {
           border = "single",
@@ -80,37 +95,9 @@ return {
         automatic_installation = false,
       }
 
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
       require("mason-lspconfig").setup {
         ensure_installed = {
           "lua_ls",
-        },
-        handlers = {
-          function(server_name)
-            require("lspconfig")[server_name].setup {
-              capabilities = capabilities,
-            }
-          end,
-          ["lua_ls"] = function()
-            require("lspconfig").lua_ls.setup {
-              capabilities = capabilities,
-              settings = {
-                Lua = {
-                  diagnostics = {
-                    globals = { "vim" },
-                  },
-                },
-              },
-            }
-          end,
-          ["intelephense"] = function()
-            require("lspconfig").intelephense.setup {
-              capabilities = capabilities,
-              init_options = {
-                globalStoragePath = os.getenv "HOME" .. "/.local/share/intelephense",
-              },
-            }
-          end,
         },
       }
 

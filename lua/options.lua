@@ -12,6 +12,7 @@ o.cmdheight = 0
 o.autochdir = true
 g.health = { style = "float" }
 o.pumheight = 10
+-- o.winborder = "single"
 
 -- Indenting
 o.expandtab = true
