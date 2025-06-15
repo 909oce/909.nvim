@@ -4,7 +4,7 @@ return {
     build = ":Cord update",
     config = function()
       require("cord").setup {
-        log_level = "error",
+        log_level = vim.log.levels.OFF,
         timestamp = {
           enabled = true,
           reset_on_idle = false,
